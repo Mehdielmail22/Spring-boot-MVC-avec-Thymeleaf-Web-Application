@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<h1 th:text="${nom}"> </h1>
+<form th:action="@{/saveedit}"  method="post">
+    <div alight="left">
+        <tr>
+            <label class="form-label" >Nom</label>
+            <td>
+
+                <input type="text" name="nom" class="form-control" placeholder="nom" />
+            </td>
+        </tr>
+    </div>
+
+
+    <div alight="left">
+        <tr>
+            <label class="form-label" >Prix</label>
+
+            <td>
+                <input type="text" name="prix" class="form-control" placeholder="prix" />
+            </td>
+        </tr>
+    </div>
+
+
+    <br>
+    <tr>
+        <td colspan="2"><button name="id" th:value="${id}" type="submit" class="btn btn-info">Save</button> </td>
+    </tr>
+</form>
+
+
+</body>
+</html>

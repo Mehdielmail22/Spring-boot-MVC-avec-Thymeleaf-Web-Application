@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+  <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div>
+  <h2 >Spring Boot Crud System -Employee Registation</h2>
+  <tr>
+    <div align = "left" >
+
+      <h3><a  th:href="@{'/add'}">Add new</a></h3>
+
+    </div>
+
+  </tr>
+  <tr>
+
+    <div class="col-sm-5" align = "center">
+      <div class="panel-body" align = "center" >
+
+
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
+            <th>Produit ID</th>
+            <th>Produit Name</th>
+            <th>Prix</th>
+
+            <th>afficher</th>
+            <th>edit</th>
+            <th>delete</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          <tr  th:each="produit : ${produits}">
+            <td  th:text="${produit.id}">Employee ID</td>
+            <td th:text="${produit.nom}">Employee Name</td>
+            <td th:text="${produit.prix}">Mobile</td>
+
+            <td>
+              <a th:href="@{'/detail/' + ${produit.id}}">Afficher</a>
+            </td>
+            <td>
+              <a th:href="@{'/edit/' + ${produit.id}}">Edit</a>
+            </td>
+            <td>
+              <a th:href="@{'/delete/' + ${produit.id}}">Delete</a>
+            </td>
+
+          </tr>
+
+          </tbody>
+        </table>
+
+
+      </div>
+
+    </div>
+
+  </tr>
+
+  </tbody>
+  </table>
+  <div>
+</body>
+</html>
